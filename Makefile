@@ -3,9 +3,16 @@
 run:
 	uv run python main.py
 
+install:
+	brew bundle
+	uv sync
+
 # is very slow, hence git clone approach below
 pull:
 	hf download meta-llama/Llama-3.1-8B-Instruct
+
+pullguard:
+	hf download meta-llama/Prompt-Guard-86M
 
 # replace <huggingface-user-name> and <ACCESS_TOKEN> with your own
 clonemodel:
